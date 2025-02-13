@@ -18,10 +18,6 @@ public class WebSocketEventListener {
     private static final Logger log = LoggerFactory.getLogger(WebSocketEventListener.class);
     private final SimpMessageSendingOperations messageTemplate;
 
-    public WebSocketEventListener(SimpMessageSendingOperations messageTemplate) {
-        this.messageTemplate = messageTemplate;
-    }
-
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event){
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());
